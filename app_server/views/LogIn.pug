@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  form(action='/' method='post')
+    .wrap
+      label
+        | Email Address
+        span.req *
+      input(type='email' required='' autocomplete='off')
+    .wrap
+      label
+        | Password
+        span.req *
+      input(type='password' required='' autocomplete='off')
+    p.signup
+      a(href='/signup') Dont have an account? Sign up
+    button.button.button-block Log In
