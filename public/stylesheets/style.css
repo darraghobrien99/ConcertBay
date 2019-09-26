@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar {
   background-color: #009e89;
-  border-color: #911821;
+  border-color: #3e4042;
 }
 
 .navbar-brand {
@@ -37,8 +37,29 @@ p.signup{
 }
 
 .card {
-  background-color: #469ea8;
+  background-color: #212626;
+  margin: auto;
+  width: 50%;
+  margin-top: 15%;
+  padding: 10%;
 }
+
+.cardsignup {
+  background-color: #212626;
+  margin: auto;
+  width: 50%;
+  margin-top: 10%;
+  padding: 5%;
+}
+
+.cardMusic {
+  background-color: #212626;
+  margin: auto;
+  width: 45%;
+  margin-top: 3%;
+  padding-top: 10%;
+}
+
 
 .card-primary {
   border-color: #a2ced3;
@@ -86,7 +107,7 @@ legend {
 }
 
 .wrap {
-  position:relative;
-  margin-bottom:40px;
   color: #009e89;
+  margin: auto;
+  width: 50%;
 }

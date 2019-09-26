@@ -3,21 +3,19 @@ extends layout
 block content
   
   form(action='/' method='post')
-  .card
+  .cardMusic
     .wrap
-      h1= title
+      h4 Please enter concert details
+      br
       label
-        | Email Address
+        | Artist Name
         span.req *
       input(type='email' required='' autocomplete='off')
     .wrap
+      br
       label
-        | Password
+        | Venue Name
         span.req *
       input(type='password' required='' autocomplete='off')
       br
-      button.button.button-block Log In
-      p.signup
-       a(href='/signup') Dont have an account? Sign up
-       br
        
