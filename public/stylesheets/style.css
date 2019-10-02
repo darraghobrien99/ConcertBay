@@ -12,6 +12,16 @@ h1, h2, h3, h4, h5, h6 {
   color: #009e89;
 }
 
+h4.scoreTitle{
+   font-family: 'Arial';
+  color: #009e89;
+  font-size: 12px;
+}
+
+.score{
+  width: 40px;
+}
+
 .navbar {
   background-color: #009e89;
   border-color: #3e4042;
@@ -53,12 +63,39 @@ p.signup{
 }
 
 .cardMusic {
+  position: relative;
   background-color: #212626;
   margin: auto;
   width: 45%;
   margin-top: 3%;
-  padding-top: 10%;
+  padding-top: 5%;
+  padding-bottom: 7%;
 }
+
+.cardScore {
+  position: absolute;
+  background-color: #212626;
+  margin: auto;
+  width: 100%;
+  margin-top: 30%;
+  margin-left: -55%;
+  padding-bottom: 7%;
+  float: left;
+}
+
+.cardComment {
+  position: absolute;
+  background-color: #212626;
+  margin: auto;
+  width: 100%;
+  margin-top: 30%;
+  margin-left: 60%;
+  padding-top: 5%;
+  padding-bottom: 7%;
+  float: right;
+}
+
+
 
 
 .card-primary {

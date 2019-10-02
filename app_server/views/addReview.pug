@@ -18,4 +18,40 @@ block content
         span.req *
       input(type='password' required='' autocomplete='off')
       br
-       
+    .cardScore
+       .wrap
+        h4.scoreTitle Please rate the concert in the following headings /10
+        br
+        label
+          | Entertainment
+          span.req *
+        input(type='email' required='' class='score' autocomplete='off')
+        .wrap
+        br
+        label
+          | Production
+          span.req *
+        input(type='input' required='' class='score' autocomplete='off')
+        br
+        .wrap
+        br
+        label
+          | Vocals
+          span.req *
+        input(type='input' required='' class='score' autocomplete='off')
+        br 
+       .wrap
+        br
+        label
+          | Value for money
+          span.req *
+        input(type='input' required='' class='score' autocomplete='off')
+        br 
+    .cardComment
+       .wrap
+        br
+        label
+          | Other Comments
+          br
+        textarea(id="theTextarea" rows=8)
+        
