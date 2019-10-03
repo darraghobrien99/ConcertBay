@@ -1,0 +1,23 @@
+extends layout
+
+block content
+
+  
+  form(action='/' method='post')
+  h1.title=pageHeader.title
+  each review in reviews
+    .cardReview
+      .wrap
+        h3.reviewTitle=review.artistName
+          .stars
+            span.fa.fa-star.checked
+            span.fa.fa-star.checked
+            span.fa.fa-star.checked
+            span.fa.fa-star.checked
+            span.fa.fa-star
+        h4.scores=review.entertainment
+        h4.scores=review.production
+        h4.scores=review.vocals
+        h4.scores=review.value
+        h5.comment=review.comment
+      

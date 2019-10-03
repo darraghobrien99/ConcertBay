@@ -1,8 +1,10 @@
 extends layout
 
 block content
+
   
   form(action='/' method='post')
+  h1.title=pageHeader.title
   .cardMusic
     .wrap
       h4 Please enter concert details
@@ -54,4 +56,4 @@ block content
           | Other Comments
           br
         textarea(id="theTextarea" rows=8)
-        
+  button(type='button' id="submit") Submit Review     

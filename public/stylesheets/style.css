@@ -95,6 +95,12 @@ p.signup{
   float: right;
 }
 
+.cardReview{
+  position: relative;
+  background-color: #212626;
+  width: 50%;
+}
+
 
 
 
@@ -125,6 +131,8 @@ h4 a, h4 a:hover {
   color: #009e89;
 }
 
+
+
 h4 small {
   font-size: 60%;
   line-height: 200%;
@@ -147,4 +155,45 @@ legend {
   color: #009e89;
   margin: auto;
   width: 50%;
+}
+
+#theTextarea{
+  height: 11.6em;
+  width: 15em;
+}
+
+h1.title{
+  width:40%;
+  margin-left: 12em;
+  margin-right:auto;
+}
+
+h3.reviewTitle{
+  font-size: 1.5em;
+  margin-left: -6em;
+}
+
+#submit{
+margin-top: 30em;
+width:20%;
+margin-left: 33em;
+margin-right:auto;
+margin-bottom: 2em;
+}
+
+.checked {
+  color: orange;
+}
+
+.stars{
+  font-size: 1em;
+  margin-top: 0.3em;
+}
+
+.scores{
+  margin-left: -7em;
+}
+
+.comment{
+  font-family: ''
 }
