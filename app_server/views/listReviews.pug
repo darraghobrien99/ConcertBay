@@ -4,20 +4,25 @@ block content
 
   
   form(action='/' method='post')
-  h1.title=pageHeader.title
+  h1.ListReviewtitle=pageHeader.title
   each review in reviews
     .cardReview
       .wrap
-        h3.reviewTitle=review.artistName
+        h3.Artistname=review.artistName
+        h3.reviewTitle=review.venueName
           .stars
             span.fa.fa-star.checked
             span.fa.fa-star.checked
             span.fa.fa-star.checked
             span.fa.fa-star.checked
             span.fa.fa-star
+        h4.scoreHeadings Entertainment (/ 5) 
         h4.scores=review.entertainment
+        h4.scoreHeadings Production (/ 5) 
         h4.scores=review.production
+        h4.scoreHeadings Vocals (/ 5) 
         h4.scores=review.vocals
+        h4.scoreHeadings Value For Money (/ 5) 
         h4.scores=review.value
         h5.comment=review.comment
       
