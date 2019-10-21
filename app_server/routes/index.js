@@ -13,6 +13,6 @@ router.get('/signup', ctrlAccount.signup);
 
 /* Concerts pages */
 router.get('/AddReview', ctrlConcerts.addReview);
-router.get('/ConcertReviews', ctrlConcerts.listReviews);
+router.get('/ConcertReviews', ctrlConcerts.concertsReadOne);
 module.exports = router;
 
