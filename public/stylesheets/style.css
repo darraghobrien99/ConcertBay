@@ -2,26 +2,15 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  color: #009e89;
+  color: #ff9500;
   background-color: #3e4042;
-  color: #009e89;
+  background-image: url(../images/concertHands.jpg);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Arial';
-  color: #009e89;
+  color: #ff9500;
 }
-
-h4.scoreTitle{
-   font-family: 'Arial';
-  color: #009e89;
-  font-size: 12px;
-}
-
-.score{
-  width: 40px;
-}
-
 
 /* Add a black background color to the top navigation */
 .topnav {
@@ -47,39 +36,34 @@ h4.scoreTitle{
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #009e89;
+  background-color: #ff9500;
   color: white;
 }
 
-.navbar {
-  background-color: #009e89;
-  border-color: #3e4042;
+h4.scoreTitle{
+   font-family: 'Arial';
+  color: #ff9500;
+  font-size: 12px;
 }
 
-.navbar-brand {
-  font-family: 'Lobster', cursive;
+.score{
+  width: 40px;
 }
 
-.banner {
-  margin-top: 4em;
-  border-bottom: 1px solid #469ea8;
-  margin-bottom: 1.5em;
-  padding-bottom: 0.5em;
-}
 
 h1 small {
-  color: #009e89;
+  color: #ff9500;
 }
 
 p.signup{
- color: #009e89;
+ color: #ff9500;
 }
 
 .card {
   background-color: #212626;
   margin: auto;
   width: 50%;
-  margin-top: 15%;
+  margin-top: 8%;
   padding: 10%;
 }
 
@@ -159,7 +143,7 @@ p.signup{
 }
 
 h4 a, h4 a:hover {
-  color: #009e89;
+  color: #ff9500;
 }
 
 
@@ -167,7 +151,7 @@ h4 a, h4 a:hover {
 h4 small {
   font-size: 60%;
   line-height: 200%;
-  color: #3e4042;
+  color: #f2f2f2;
 }
 
 .address {
@@ -183,7 +167,7 @@ legend {
 }
 
 .wrap {
-  color: #009e89;
+  color: #ff9500;
   margin: auto;
   width: 50%;
 }
@@ -197,21 +181,25 @@ h1.title{
   width:40%;
   margin-left: 12em;
   margin-right:auto;
+  color:#212626;
 }
 
 h1.ListReviewtitle{
   width:40%;
   float:left;
+  color:#212626;
 }
 
 h3.Artistname{
   font-size:1.5em;
   margin-left: -6em;
+  color:#ff9500;
 }
 
 h3.reviewTitle{
   font-size: 1em;
   margin-left: -9em;
+  color:#ff9500;
 }
 
 #submit{
