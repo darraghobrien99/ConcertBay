@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Con = mongoose.model('Concert');
 
 
+
 const concertsCreate = function (req, res) {
 Con.create({ 
 _id: mongoose.Types.ObjectId(),
@@ -26,13 +27,34 @@ res
 };
 
 const concertsReadOne = function (req, res){
-Con
-.findById(req.params.reviewid) 
-.exec((err, concert) => { 
-res 
-.status(200) 
-.json(concert); 
-});
+if (req.params && req.params.reviewid) {
+    Con
+      .findById(req.params.reviewid)
+      .exec((err, concert) => {
+        if (!concert) {
+          res	
+            .status(404) 
+            .json({	
+              "message": "reviewid not found"
+            });	 
+          return;
+        } else if (err) {
+          res	
+            .status(404) 
+            .json(err); 
+          return; 	
+        }
+        res		
+          .status(200)
+          .json(concert);
+      });
+  } else {		
+    res		
+      .status(404) 	
+      .json({	
+        "message": "No review in request"
+      });		
+  }
 };
 
 
