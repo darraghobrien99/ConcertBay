@@ -46,13 +46,7 @@ max: 5
 comment: {
 type: String,
 required: true
-},
-
-createdOn: {
-type: Date,
-'default': Date.now
 }
-
  });
 
 mongoose.model('Concert', concertSchema);

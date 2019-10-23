@@ -12,13 +12,13 @@ block content
       label
         | Artist Name
         span.req *
-      input(type='email' required='' autocomplete='off')
+      input(type='email' name='artistName' required='' autocomplete='off')
     .wrap
       br
       label
         | Venue Name
         span.req *
-      input(type='password' required='' autocomplete='off')
+      input(type='password' name='venueName' required='' autocomplete='off')
       br
     .cardScore
        .wrap
@@ -27,27 +27,27 @@ block content
         label
           | Entertainment
           span.req *
-        input(type='email' required='' class='score' autocomplete='off')
+        input(type='email' required='' name='entertainment' class='score' autocomplete='off')
         .wrap
         br
         label
           | Production
           span.req *
-        input(type='input' required='' class='score' autocomplete='off')
+        input(type='input' required='' name='production' class='score' autocomplete='off')
         br
         .wrap
         br
         label
           | Vocals
           span.req *
-        input(type='input' required='' class='score' autocomplete='off')
+        input(type='input' required='' name='vocals' class='score' autocomplete='off')
         br 
        .wrap
         br
         label
           | Value for money
           span.req *
-        input(type='input' required='' class='score' autocomplete='off')
+        input(type='input' required='' name='value' class='score' autocomplete='off')
         br 
     .cardComment
        .wrap
@@ -55,5 +55,5 @@ block content
         label
           | Other Comments
           br
-        textarea(id="theTextarea" rows=8)
+        textarea(id="theTextarea" rows=8 name='comment')
   button(type='button' id="submit") Submit Review     
