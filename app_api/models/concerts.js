@@ -47,6 +47,7 @@ comment: {
 type: String,
 required: true
 }
- });
+ }
+ );
 
 mongoose.model('Review', concertSchema);

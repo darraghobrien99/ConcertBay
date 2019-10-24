@@ -5,9 +5,7 @@ const ctrlConcerts = require('../controllers/concerts');
 
 
 // concerts/reviews
-// router
-//   .route('/concerts')
-//   .post(ctrlConcerts.concertsCreate);
+
 router
   .route('/concert')
   .post(ctrlConcerts.newCon)

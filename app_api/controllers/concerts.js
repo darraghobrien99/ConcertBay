@@ -3,35 +3,14 @@ const Con = mongoose.model('Review');
 
 
 
-
-// const concertsCreate = function (req, res) {
-// Con.create({ 
-// _id: mongoose.Types.ObjectId(),
-// artistName: req.body.artistName,
-// venueName: req.body.venueName,
-// entertainment: req.body.entertainment,
-// production: req.body.production,
-// vocals: req.body.vocals,
-// value: req.body.value,
-// comment: req.body.comment
-// }, (err, concert) => { 
-// if (err) {
-// res
-// .status(400)
-// .json(err);
-// } else {
-// res
-// .status(201)
-// .json(concert);
-// }
-// });
-// };
-
 module.exports.newCon = function(req, res){
     Con.create({
         artistName : req.body.artistName,
         venueName : req.body.venueName,
         entertainment : req.body.entertainment,
+        production : req.body.production,
+        vocals : req.body.vocals,
+        value : req.body.value
     }, 
     function(err, meal) {
         if (err) {
