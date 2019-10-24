@@ -5,15 +5,18 @@ const ctrlConcerts = require('../controllers/concerts');
 
 
 // concerts/reviews
+// router
+//   .route('/concerts')
+//   .post(ctrlConcerts.concertsCreate);
 router
-  .route('/concerts')
-  .post(ctrlConcerts.concertsCreate);
+  .route('/concert')
+  .post(ctrlConcerts.newCon)
 
 router
   .route('/concerts/:reviewid')
   .get(ctrlConcerts.concertsReadOne)
-  .put(ctrlConcerts.concertsUpdateOne)
-  .delete(ctrlConcerts.concertsDeleteOne);
+  // .put(ctrlConcerts.concertsUpdateOne)
+  // .delete(ctrlConcerts.concertsDeleteOne);
 
 
 module.exports = router;
