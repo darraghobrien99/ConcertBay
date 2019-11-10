@@ -1,36 +1,35 @@
 const mongoose = require('mongoose');
-const Con = mongoose.model('Review');
+const Usr = mongoose.model('User');
 
 
 
-module.exports.newCon = function(req, res){
-    Con.create({
-        artistName : req.body.artistName,
-        venueName : req.body.venueName,
-        entertainment : req.body.entertainment,
-        production : req.body.production,
-        vocals : req.body.vocals,
-        value : req.body.value
+module.exports.newUser = function(req, res){
+    Usr.create({
+        fullName : req.body.fullName,
+        email : req.body.email,
+        username : req.body.username,
+        password : req.body.password
     }, 
-    function(err, meal) {
+    function(err, user) {
         if (err) {
             sendJsonResponse(res, 403, err);
         }
         else {
-            sendJsonResponse(res, 203, meal);
+            sendJsonResponse(res, 203, user);
         }
     });
 }
 
-module.exports.concertsReadOne = function (req, res){
+
+module.exports.usersReadOne = function (req, res){
 // res
 //   .status(201)
 //   .json({"ss": req.params.reviewid})
-if (req.params && req.params.reviewid) {
-    Con
-      .findById(req.params.reviewid)
-      .exec((err, conc) => {
-        if (!conc) {
+if (req.params && req.params.userid) {
+    Usr
+      .findById(req.params.userid)
+      .exec((err, user2) => {
+        if (!user2) {
           res	
             .status(403) 
             .json({	
@@ -45,13 +44,13 @@ if (req.params && req.params.reviewid) {
         }
         res		
           .status(200)
-          .json(conc);
+          .json(user2);
       });
   } else {		
     res		
       .status(405) 	
       .json({	
-        "message": "No review in request"
+        "message": "No user in request"
       });		
   }
 };
@@ -74,12 +73,12 @@ var sendJsonResponse = function(res, status, content){
 // .json({"status" : "success"});
 //  };
 
-module.exports.concertsDeleteOne = function (req, res) {
-  const reviewid = req.params.reviewid;
-  if (reviewid) {
-    Con
-      .findByIdAndRemove(reviewid) 
-      .exec((err, concert) => {
+module.exports.usersDeleteOne = function (req, res) {
+  const userid = req.params.userid;
+  if (userid) {
+    Usr
+      .findByIdAndRemove(userid) 
+      .exec((err, users2) => {
           if (err) {
             res
               .status(404)
@@ -95,7 +94,7 @@ module.exports.concertsDeleteOne = function (req, res) {
     res
       .status(404)
       .json({
-        "message": "No concert review to delete"
+        "message": "No user to delete"
       });
   }
 };

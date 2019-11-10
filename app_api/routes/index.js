@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const ctrlConcerts = require('../controllers/concerts');
+const ctrlUsers = require('../controllers/users');
 
 
 
@@ -14,7 +15,19 @@ router
   .route('/concerts/:reviewid')
   .get(ctrlConcerts.concertsReadOne)
   // .put(ctrlConcerts.concertsUpdateOne)
-  // .delete(ctrlConcerts.concertsDeleteOne);
+  .delete(ctrlConcerts.concertsDeleteOne);
+
+  //users
+
+  router
+  .route('/account')
+  .post(ctrlUsers.newUser)
+
+router
+  .route('/account/:userid')
+  .get(ctrlUsers.usersReadOne)
+  // .put(ctrlConcerts.concertsUpdateOne)
+  .delete(ctrlUsers.usersDeleteOne);
 
 
 module.exports = router;
