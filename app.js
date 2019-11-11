@@ -8,8 +8,6 @@ require('./app_api/models/db');
 const apiRoutes = require('./app_api/routes/index');
 
 
-
-
 var app = express();
 
 // view engine setup

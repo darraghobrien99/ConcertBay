@@ -22,9 +22,9 @@ module.exports.newUser = function(req, res){
 
 
 module.exports.usersReadOne = function (req, res){
-// res
-//   .status(201)
-//   .json({"ss": req.params.reviewid})
+/* res
+  .status(201)
+  .json({"User ID": req.params.reviewid})*/
 if (req.params && req.params.userid) {
     Usr
       .findById(req.params.userid)

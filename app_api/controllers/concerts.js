@@ -10,7 +10,8 @@ module.exports.newCon = function(req, res){
         entertainment : req.body.entertainment,
         production : req.body.production,
         vocals : req.body.vocals,
-        value : req.body.value
+        value : req.body.value,
+        comment: req.body.comment
     }, 
     function(err, meal) {
         if (err) {

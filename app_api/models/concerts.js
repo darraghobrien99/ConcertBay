@@ -46,7 +46,9 @@ max: 5
 comment: {
 type: String,
 required: true
-}
+},
+
+versionKey: false // set to false then it wont create in mongodb
  }
  );
 

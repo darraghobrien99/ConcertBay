@@ -20,13 +20,13 @@ router
   //users
 
   router
-  .route('/account')
+  .route('/accounts')
   .post(ctrlUsers.newUser)
 
 router
-  .route('/account/:userid')
+  .route('/accounts/:userid')
   .get(ctrlUsers.usersReadOne)
-  // .put(ctrlConcerts.concertsUpdateOne)
+ // .put(ctrlConcerts.concertsUpdateOne)
   .delete(ctrlUsers.usersDeleteOne);
 
 
