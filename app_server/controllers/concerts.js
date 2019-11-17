@@ -1,3 +1,10 @@
+const request = require('request');
+const apiOptions = { 
+server : 'http://localhost:3000' 
+}; 
+if (process.env.NODE_ENV === 'production') { 
+apiOptions.server = 'https://whispering-sierra-89492.herokuapp.com'; 
+}
 
 /* GET 'home' page */
 const addReview = function(req, res){
@@ -11,11 +18,6 @@ res.render('addReview', {
 
 /* GET 'Location info' page */
 const listReviews = function(req, res){
-res.render('listReviews', 
-	{ title: 'Concert Reviews',
-	pageHeader: {
-		title: 'Most Recent Reviews'
-	},
 reviews: [{ 
 artistName: 'Coldplay',
 venueName: 'Croke Park',
@@ -34,8 +36,34 @@ value: '3',
 comment: '"Ariana was AMAZINGGGG!!!! EVERYTHING WAS SO PERFECT! One bad thing I would say is that the tickets were so overpriced but i had to see her when she was in Ireland"'
 
 }]
-});
 };
+;
+
+/*const _renderHomepage = function(req, res){
+res.render('listReviews', 
+	{ title: 'Concert Reviews',
+	pageHeader: {
+		title: 'Most Recent Reviews'
+	},
+const homelist = function(req, res){
+const path = '/api/concerts'; 
+const requestOptions = { 
+url : apiOptions.server + path, 
+method : 'GET', 
+json : {}, 
+qs : { 
+lng : -0.9690884, 
+lat : 51.455041, 
+maxDistance : 20 
+} 
+}; 
+request(requestOptions, (err, response, body) => { 
+_renderHomepage(req, res); 
+} 
+);
+};*/
+
+
 
 
 module.exports = {
