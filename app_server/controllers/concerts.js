@@ -1,7 +1,9 @@
 const request = require('request');
+
 const apiOptions = { 
 server : 'http://localhost:3000' 
-}; 
+};
+
 if (process.env.NODE_ENV === 'production') { 
 apiOptions.server = 'https://whispering-sierra-89492.herokuapp.com'; 
 }
@@ -37,31 +39,34 @@ comment: '"Ariana was AMAZINGGGG!!!! EVERYTHING WAS SO PERFECT! One bad thing I 
 
 }]
 };
-;
 
-/*const _renderHomepage = function(req, res){
-res.render('listReviews', 
-	{ title: 'Concert Reviews',
+const _renderHomepage = function(req, res){
+	res.render('listReviews', { 
+	title: 'Most Recent Reviews',
 	pageHeader: {
 		title: 'Most Recent Reviews'
-	},
+		} 
+	});
+};
 const homelist = function(req, res){
-const path = '/api/concerts'; 
+const path = '/api/locations'; 
 const requestOptions = { 
 url : apiOptions.server + path, 
 method : 'GET', 
 json : {}, 
 qs : { 
-lng : -0.9690884, 
-lat : 51.455041, 
-maxDistance : 20 
+id: '5db183cb1c9d440000bced1c'
 } 
 }; 
 request(requestOptions, (err, response, body) => { 
 _renderHomepage(req, res); 
 } 
 );
-};*/
+};
+
+
+
+
 
 
 
