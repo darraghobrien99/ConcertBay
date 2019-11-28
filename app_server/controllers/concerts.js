@@ -8,15 +8,7 @@ if (process.env.NODE_ENV === 'production') {
 apiOptions.server = 'https://whispering-sierra-89492.herokuapp.com'; 
 }
 
-/* GET 'home' page */
-const addReview = function(req, res){
-res.render('addReview', { 
-	title: 'ConcertBay - Review your Experience',
-	pageHeader: {
-		title: 'Review Concert'
-		} 
-	});
-};
+
 
 /* GET 'Location info' page */
 const listReviews = function(req, res){
@@ -40,12 +32,13 @@ comment: '"Ariana was AMAZINGGGG!!!! EVERYTHING WAS SO PERFECT! One bad thing I 
 }]
 };
 
-const _renderHomepage = function(req, res){
+const _renderHomepage = function(req, res, responseBody){
 	res.render('listReviews', { 
 	title: 'Most Recent Reviews',
 	pageHeader: {
 		title: 'Most Recent Reviews'
-		} 
+		},
+		concerts: responseBody 
 	});
 };
 const homelist = function(req, res){
@@ -54,16 +47,75 @@ const requestOptions = {
 url : apiOptions.server + path, 
 method : 'GET', 
 json : {}, 
-qs : { 
-id: '5db183cb1c9d440000bced1c'
-} 
+qs : {} 
 }; 
 request(requestOptions, (err, response, body) => { 
-_renderHomepage(req, res); 
+_renderHomepage(req, res,body); 
 } 
 );
 };
 
+const _renderReviewForm = function (req, res) { 
+res.render('addReview', { 
+	title: 'ConcertBay - Review your Experience',
+	pageHeader: {
+		title: 'Review Concert'
+		} 
+	});
+};
+/* GET 'Add review' page */
+const addReview = function(req, res){
+_renderReviewForm(req, res); 
+};
+
+
+const doAddReview = function(req, res){
+	const path = `/api/concert`; 
+	const postdata = 
+	{ 
+	    artistName : req.body.artistName,
+        venueName : req.body.venueName,
+        entertainment : req.body.entertainment,
+        production : req.body.production,
+        vocals : req.body.vocals,
+        value : req.body.value,
+        comment: req.body.comment
+	}; 
+
+	const requestOptions = {
+url : apiOptions.server + path, 
+method : 'POST', 
+json : postdata 
+};
+
+request( requestOptions,(err, response, body) => {
+if (response.statusCode === 201) { 
+res.redirect(`/concerts/${response.body._id}`); 
+  console.log(response.body._id);
+} else { 
+_showError(req, res, response.statusCode); 
+}
+}
+);
+
+};
+
+const _showError = function (req, res, status) {
+    let title = '';
+    let content = '';
+    if (status === 404) { 
+    title = '404, page not found'; 
+    content = 'Oh dear. Looks like we can\'t find this page. Sorry.'; 
+    } else { 
+    title = `${status}, something's gone wrong`; 
+    content = 'Something, somewhere, has gone just a little bit wrong.'; 
+    }
+    res.status(status); 
+    res.render('generic-text', { 
+    title : title, 
+    content : content 
+    }); 
+    };
 
 
 
@@ -73,5 +125,6 @@ _renderHomepage(req, res);
 
 module.exports = {
 addReview,
-listReviews
+listReviews,
+doAddReview
 };

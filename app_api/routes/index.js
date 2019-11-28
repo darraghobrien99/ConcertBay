@@ -21,7 +21,7 @@ router
 
   router
   .route('/accounts')
-  .post(ctrlUsers.newUser)
+  .post(ctrlUsers.newUser);
 
 router
   .route('/accounts/:userid')

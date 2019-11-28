@@ -5,11 +5,7 @@ res.render('login', { title: 'Login' });
 };
 
 const signup = function(req, res, next){ 
-res.render('signup', { 
-	title: 'Sign Up',
-	pageHeader: {
-		title: 'Welcome to ConcertBay'
-			},
+
 users: [{ 
 fullName: 'Darragh OBrien',
 email: 'darraghobrien@gmail.com',
@@ -22,11 +18,73 @@ username: 'johnoshea',
 password: 'johnny2019'
 
 }]
-});
 };
+
+const _renderSignUpForm = function (req, res) { 
+res.render('signup', { 
+	title: 'Sign Up',
+	pageHeader: {
+		title: 'Welcome to ConcertBay'
+			},
+	});
+};
+/* GET 'Add review' page */
+const addUser= function(req, res){
+_renderSignUpForm(req, res); 
+};
+
+
+const doAddUser = function(req, res){
+	const path = `/api/accounts`; 
+	const postdata = 
+	{ 
+	    fullName : req.body.fullName,
+	    email: req.body.email,
+        username : req.body.username,
+        password : req.body.password
+
+	}; 
+
+	const requestOptions = {
+url : apiOptions.server + path, 
+method : 'POST', 
+json : postdata 
+};
+
+request( requestOptions,(err, response, body) => {
+if (response.statusCode === 201) { 
+res.redirect(`/`); 
+  console.log(response.body._id);
+} else { 
+_showError(req, res, response.statusCode); 
+}
+}
+);
+
+};
+
+const _showError = function (req, res, status) {
+    let title = '';
+    let content = '';
+    if (status === 404) { 
+    title = '404, page not found'; 
+    content = 'Oh dear. Looks like we can\'t find this page. Sorry.'; 
+    } else { 
+    title = `${status}, something's gone wrong`; 
+    content = 'Something, somewhere, has gone just a little bit wrong.'; 
+    }
+    res.status(status); 
+    res.render('generic-text', { 
+    title : title, 
+    content : content 
+    }); 
+    };
+
 
 
 module.exports = { 
 login,
-signup
+signup,
+addUser,
+doAddUser
 };

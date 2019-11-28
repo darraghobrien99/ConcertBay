@@ -20,7 +20,9 @@ required: true
 password: {
 type: String,
 required: true
-}
+},
+
+versionKey: false // set to false then it wont create in mongodb
 
  });
 

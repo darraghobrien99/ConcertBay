@@ -3,57 +3,57 @@ extends layout
 block content
 
   
-  form(action='/' method='post')
-  h1.title=pageHeader.title
-  .cardMusic
-    .wrap
-      h4 Please enter concert details
-      br
-      label
-        | Artist Name
-        span.req *
-      input(type='email' name='artistName' required='' autocomplete='off')
-    .wrap
-      br
-      label
-        | Venue Name
-        span.req *
-      input(type='password' name='venueName' required='' autocomplete='off')
-      br
-    .cardScore
-       .wrap
-        h4.scoreTitle Please rate the concert in the following headings /10
+  form(action="", method='post')
+    h1.title=pageHeader.title
+    .cardMusic
+      .wrap
+        h4 Please enter concert details
         br
         label
-          | Entertainment
+          | Artist Name
           span.req *
-        input(type='email' required='' name='entertainment' class='score' autocomplete='off')
-        .wrap
+        input(type='input' name='artistName' required='' autocomplete='off')
+      .wrap
         br
         label
-          | Production
+          | Venue Name
           span.req *
-        input(type='input' required='' name='production' class='score' autocomplete='off')
+        input(type='input' name='venueName' required='' autocomplete='off')
         br
-        .wrap
-        br
-        label
-          | Vocals
-          span.req *
-        input(type='input' required='' name='vocals' class='score' autocomplete='off')
-        br 
-       .wrap
-        br
-        label
-          | Value for money
-          span.req *
-        input(type='input' required='' name='value' class='score' autocomplete='off')
-        br 
-    .cardComment
-       .wrap
-        br
-        label
-          | Other Comments
+      .cardScore
+         .wrap
+          h4.scoreTitle Please rate the concert in the following headings /10
           br
-        textarea(id="theTextarea" rows=8 name='comment')
-  button(type='button' id="submit") Submit Review     
+          label
+            | Entertainment
+            span.req *
+          input(type='input' required='' name='entertainment' class='score' autocomplete='off')
+          .wrap
+          br
+          label
+            | Production
+            span.req *
+          input(type='input' required='' name='production' class='score' autocomplete='off')
+          br
+          .wrap
+          br
+          label
+            | Vocals
+            span.req *
+          input(type='input' required='' name='vocals' class='score' autocomplete='off')
+          br 
+         .wrap
+          br
+          label
+            | Value for money
+            span.req *
+          input(type='input' required='' name='value' class='score' autocomplete='off')
+          br 
+      .cardComment
+         .wrap
+          br
+          label
+            | Other Comments
+            br
+          textarea(id="theTextarea" rows=8 name='comment')
+          input(type="submit" value="submit")

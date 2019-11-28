@@ -6,12 +6,22 @@ const ctrlAccount = require('../controllers/account');
  
 
 /* Account pages */
-router.get('/login', ctrlAccount.login);
-router.get('/signup', ctrlAccount.signup);
+router.get('/', ctrlAccount.login);
+
+router
+.route('/signup')
+.get(ctrlAccount.addUser)
+.post(ctrlAccount.doAddUser);
+//router.get('/signup', ctrlAccount.signup);
 
 
 /* Concerts pages */
-router.get('/AddReview', ctrlConcerts.addReview);
-router.get('/', ctrlConcerts.listReviews);
+router
+.route('/AddReview')
+.get(ctrlConcerts.addReview)
+.post(ctrlConcerts.doAddReview);
+
+//router.get('/AddReview', ctrlConcerts.addReview);
+router.get('/listReviews', ctrlConcerts.listReviews);
 module.exports = router;
 
