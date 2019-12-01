@@ -80,15 +80,15 @@ const _showError = function (req, res, status) {
     }); 
     };
 
-   const about = function (req, res) { 
+const about = function (req, res) { 
 res.render('about', { 
     title: 'About',
     pageHeader: {
         title: 'About ConcertBay'
             },
+            sidebar: "Have you ever gone to a concert and been dissapointed? Well, that feeling will never happen again with ConcertBay. ConcertBay was established in 2019 in order to warn eager concert-goers of terrible experiences. Review the artist, venue along with the concerts production, vocals, value for money and entertainment. ConcertBay also allows an additional comment for any other criticisms the user has!"
     });
 };
-
 
 
 module.exports = { 

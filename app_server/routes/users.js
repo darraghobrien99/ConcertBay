@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('/about', ctrlAccount.about);
+
 
 
 

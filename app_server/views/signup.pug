@@ -1,41 +1,32 @@
 extends layout
-
 block content
-
-  form(action='/' method='post')
-    .cardsignup
-      .wrap
+ .cardsignup
+  .container
+    .row
+      .col-md-6.col-md-offset-3.mx-auto
         h1=title
-        label
-          | Name:
-          span.req *
-        input(type='input' required='' autocomplete='off')
-        br 
-        br
-        label
-          | Email Address
-          span.req *
-        input(type='email' required='' autocomplete='off')
-        br
-        br
-        label
-          | Username
-          span.req *
-        input(type='text' required='' autocomplete='off')
-        br
-        br
-        label
-          | Password
-          span.req *
-        input(type='password' required='' autocomplete='off')
-        br
-        br
-        label
-          | Confirm Password
-          span.req *
-        input(type='password' required='' autocomplete='off')
-        br
-        input(type="submit" value="submit")
-        p.signup
-        a(href='/') Have an account already? Login.
-      
+
+
+        form(action="", method="POST")
+          div.form-group
+            label Name:
+            span.req *
+            input#name.form-control(type='text', placeholder='Full Name' name='uname')
+          div.form-group
+            label Email Address:
+            span.req *
+            input#email.form-control(type='email', placeholder='name@hotmail.com' name='email')
+          div.form-group
+            label Username:
+            span.req *
+            input#email.form-control(type='text', name='username')
+          div.form-group
+            label Password:
+            span.req *
+            input#pw.form-control(type='password' name='password')
+          div.form-group
+            label Confirm Password:
+            span.req *
+            input#pw2.form-control(type='password' name='confirmPassword')
+          input(type="submit" value="submit")
+          a(href='/') Have an account already? Login.

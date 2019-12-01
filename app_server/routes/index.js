@@ -14,6 +14,8 @@ router
 .post(ctrlAccount.doAddUser);
 //router.get('/signup', ctrlAccount.signup);
 
+router.get('/about', ctrlAccount.about);
+
 
 /* Concerts pages */
 router
@@ -23,6 +25,5 @@ router
 
 //router.get('/AddReview', ctrlConcerts.addReview);
 router.get('/listReviews', ctrlConcerts.homelist);
-router.get('/concerts/:reviewid', ctrlConcerts.reviewInfo);
 module.exports = router;
 
