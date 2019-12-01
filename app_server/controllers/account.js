@@ -1,3 +1,13 @@
+const request = require('request');
+
+const apiOptions = { 
+server : 'http://localhost:3000' 
+};
+
+if (process.env.NODE_ENV === 'production') { 
+apiOptions.server = 'https://safe-bastion-68573.herokuapp.com/'; 
+}
+
 
 /* GET home page */
 const login = function(req, res, next){ 
