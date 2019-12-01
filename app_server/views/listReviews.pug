@@ -2,13 +2,13 @@ extends layout
 
 block content
 
-  
-  form(action='/' method='post')
   h1.ListReviewtitle=pageHeader.title
+  .error=message
   each review in reviews
     .cardReview
       .wrap
-        h3.Artistname=review.artistName
+        h3
+         a(href'concerts/${review._id}')=review.artistName
         h3.reviewTitle=review.venueName
           .stars
             span.fa.fa-star.checked

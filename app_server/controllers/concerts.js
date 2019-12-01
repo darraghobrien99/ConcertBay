@@ -5,7 +5,7 @@ server : 'http://localhost:3000'
 };
 
 if (process.env.NODE_ENV === 'production') { 
-apiOptions.server = 'https://whispering-sierra-89492.herokuapp.com'; 
+apiOptions.server = 'https://safe-bastion-68573.herokuapp.com/'; 
 }
 
 
@@ -33,16 +33,27 @@ comment: '"Ariana was AMAZINGGGG!!!! EVERYTHING WAS SO PERFECT! One bad thing I 
 };
 
 const _renderHomepage = function(req, res, responseBody){
+    let message = null; 
+if (!(responseBody instanceof Array)) { 
+message = "API lookup error"; 
+responseBody = []; 
+} else { 
+if (!responseBody.length) { 
+message = "No places found nearby"; 
+} 
+}
+
 	res.render('listReviews', { 
 	title: 'Most Recent Reviews',
 	pageHeader: {
 		title: 'Most Recent Reviews'
 		},
-		concerts: responseBody 
+		reviews: responseBody,
+        message:message
 	});
 };
-const homelist = function(req, res){
-const path = '/api/locations'; 
+const homelist = function(req, res){ //location
+const path = '/api/concerts'; 
 const requestOptions = { 
 url : apiOptions.server + path, 
 method : 'GET', 
@@ -54,6 +65,14 @@ _renderHomepage(req, res,body);
 } 
 );
 };
+
+
+const reviewInfo = function(req, res){
+_getReviewInfo(req, res, (req, res, responseData) => { 
+_renderHomepage(req, res, responseData); 
+}); 
+};
+
 
 const _renderReviewForm = function (req, res) { 
 res.render('addReview', { 
@@ -126,5 +145,7 @@ const _showError = function (req, res, status) {
 module.exports = {
 addReview,
 listReviews,
+homelist,
+reviewInfo,
 doAddReview
 };

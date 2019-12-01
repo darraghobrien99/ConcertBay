@@ -22,6 +22,7 @@ router
 .post(ctrlConcerts.doAddReview);
 
 //router.get('/AddReview', ctrlConcerts.addReview);
-router.get('/listReviews', ctrlConcerts.listReviews);
+router.get('/listReviews', ctrlConcerts.homelist);
+router.get('/concerts/:reviewid', ctrlConcerts.reviewInfo);
 module.exports = router;
 

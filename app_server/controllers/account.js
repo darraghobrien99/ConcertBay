@@ -80,11 +80,21 @@ const _showError = function (req, res, status) {
     }); 
     };
 
+   const about = function (req, res) { 
+res.render('about', { 
+    title: 'About',
+    pageHeader: {
+        title: 'About ConcertBay'
+            },
+    });
+};
+
 
 
 module.exports = { 
 login,
 signup,
 addUser,
-doAddUser
+doAddUser,
+about
 };
