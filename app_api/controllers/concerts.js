@@ -13,12 +13,13 @@ module.exports.newCon = function(req, res){
         value : req.body.value,
         comment: req.body.comment
     }, 
-    function(err, meal) {
+    function(err, rev) {
         if (err) {
             sendJsonResponse(res, 403, err);
         }
         else {
-            sendJsonResponse(res, 203, meal);
+            sendJsonResponse(res, 201, rev);
+            console.log(rev);
         }
     });
 }

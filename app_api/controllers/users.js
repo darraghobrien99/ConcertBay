@@ -10,12 +10,15 @@ module.exports.newUser = function(req, res){
         username : req.body.username,
         password : req.body.password
     }, 
-    function(err, user) {
+    function(err, newusr) {
         if (err) {
             sendJsonResponse(res, 403, err);
+            console.log(newusr);
         }
         else {
-            sendJsonResponse(res, 203, user);
+            sendJsonResponse(res, 201, newusr);
+            console.log(newusr);
+            
         }
     });
 }

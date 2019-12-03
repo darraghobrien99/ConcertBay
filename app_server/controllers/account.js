@@ -49,7 +49,7 @@ const doAddUser = function(req, res){
 	const postdata = 
 	{ 
 	    fullName : req.body.fullName,
-	    email: req.body.email,
+	    email : req.body.email,
         username : req.body.username,
         password : req.body.password
 
@@ -64,9 +64,11 @@ json : postdata
 request( requestOptions,(err, response, body) => {
 if (response.statusCode === 201) { 
 res.redirect(`/`); 
-  console.log(response.body._id);
+
 } else { 
-_showError(req, res, response.statusCode); 
+_showError(req, res, response.statusCode);
+console.log(body);
+console.log(response.body._id); 
 }
 }
 );

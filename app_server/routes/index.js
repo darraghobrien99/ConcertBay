@@ -6,13 +6,15 @@ const ctrlAccount = require('../controllers/account');
  
 
 /* Account pages */
-router.get('/', ctrlAccount.login);
+
 
 router
 .route('/signup')
 .get(ctrlAccount.addUser)
 .post(ctrlAccount.doAddUser);
 //router.get('/signup', ctrlAccount.signup);
+
+router.get('/', ctrlAccount.login);
 
 router.get('/about', ctrlAccount.about);
 
