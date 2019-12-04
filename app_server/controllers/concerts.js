@@ -61,7 +61,6 @@ json : {},
 qs : {} 
 }; 
 request(requestOptions, (err, response, body) => { 
-let data = body;
 _renderHomepage(req, res,body); 
 } 
 );
