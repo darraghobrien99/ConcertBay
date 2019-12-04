@@ -11,7 +11,7 @@ apiOptions.server = 'https://safe-bastion-68573.herokuapp.com/';
 
 /* GET home page */
 const login = function(req, res, next){ 
-res.render('login', { title: 'Login' }); 
+res.render('LogIn', { title: 'Login' }); 
 };
 
 const signup = function(req, res, next){ 
