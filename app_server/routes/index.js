@@ -25,7 +25,6 @@ router
 .get(ctrlConcerts.addReview)
 .post(ctrlConcerts.doAddReview);
 
-//router.get('/AddReview', ctrlConcerts.addReview);
 router.get('/listReviews', ctrlConcerts.homelist);
 
 module.exports = router;
