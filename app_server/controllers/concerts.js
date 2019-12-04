@@ -53,7 +53,7 @@ message = "No places found nearby";
 	});
 };
 const homelist = function(req, res){ //location
-const path = '/api/concerts'; 
+const path = `/api/allconcerts`; 
 const requestOptions = { 
 url : apiOptions.server + path, 
 method : 'GET', 
@@ -61,6 +61,7 @@ json : {},
 qs : {} 
 }; 
 request(requestOptions, (err, response, body) => { 
+let data = body;
 _renderHomepage(req, res,body); 
 } 
 );

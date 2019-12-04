@@ -24,6 +24,31 @@ module.exports.newCon = function(req, res){
     });
 }
 
+module.exports.reviewsList = function (req, res) {
+  Con
+    .find()
+    .exec((err, rev) => {
+      if(err){
+        res
+        .status(400)
+        .json(err);
+      }
+      else if(!rev)
+      {
+        res
+        .status(404)
+        .json({"message": "Reviews not found"});
+      }
+      else{
+        res
+          .status(200)
+          .json(rev);
+      }
+
+    })
+  
+   };
+
 module.exports.concertsReadOne = function (req, res){
 // res
 //   .status(201)

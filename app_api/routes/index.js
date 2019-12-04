@@ -9,11 +9,11 @@ const ctrlUsers = require('../controllers/users');
 
 router
   .route('/concert')
-  .post(ctrlConcerts.newCon)
+  .post(ctrlConcerts.newCon);
 
 router
-  .route('/concerts/:reviewid')
-  .get(ctrlConcerts.concertsReadOne)
+  .route('/allconcerts')
+  .get(ctrlConcerts.reviewsList)
   // .put(ctrlConcerts.concertsUpdateOne)
   .delete(ctrlConcerts.concertsDeleteOne);
 
