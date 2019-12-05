@@ -14,6 +14,21 @@ const login = function(req, res, next){
 res.render('LogIn', { title: 'Login' }); 
 };
 
+const signup = function(req, res, next){ 
+
+users: [{ 
+fullName: 'Darragh OBrien',
+email: 'darraghobrien@gmail.com',
+username: 'darragh257',
+password: 'darragh101'
+}, {
+fullName: 'John OShea',
+email: 'johnoshea@gmail.com',
+username: 'johnoshea',
+password: 'johnny2019'
+
+}]
+};
 
 const _renderSignUpForm = function (req, res) { 
 res.render('signup', { 
@@ -90,6 +105,7 @@ res.render('about', {
 
 module.exports = { 
 login,
+signup,
 addUser,
 doAddUser,
 about
