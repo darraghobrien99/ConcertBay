@@ -1,12 +1,8 @@
 const mongoose = require('mongoose');
-const dbURI = 'mongodb://localhost/concertBay';
-
-
-if(process.env.NODE_ENV === 'production'){
-  dbURI  = 'mongodb+srv://Darragh:v7sp9umh@cluster0-or84a.mongodb.net/ConcertBay';
-}
-
+const dbURI = 'mongodb+srv://Darragh:v7sp9umh@cluster0-or84a.mongodb.net/ConcertBay';
 mongoose.connect(dbURI);
+
+
 
 const readLine = require ('readline');
 if (process.platform === 'win32'){
