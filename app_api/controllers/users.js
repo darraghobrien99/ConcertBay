@@ -65,17 +65,6 @@ var sendJsonResponse = function(res, status, content){
 
 
 
-// const concertsUpdateOne = function (req, res) {
-// res
-// .status(200)
-// .json({"status" : "success"});
-//  };
-// const concertsDeleteOne = function (req, res) {
-// res
-// .status(200)
-// .json({"status" : "success"});
-//  };
-
 module.exports.usersDeleteOne = function (req, res) {
   const userid = req.params.userid;
   if (userid) {
